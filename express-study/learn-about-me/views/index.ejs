@@ -1,0 +1,30 @@
+<%- include('_header'); -%>
+
+<h1>Welcome to Learn About Me! 👏</h1>
+<br>
+<div class="list-group">
+    <% users.forEach(function(user) { %>
+    <div class="list-group-item panel panel-default">
+        <div class="panel-heading">
+            <a href="/users/<%= user.username %>"> <%= user.name() %></a>
+        </div>
+        <% if (user.bio) { %>
+        <div class="panel-body">ℹ️<%= user.bio %></div>
+        <% } %>
+        <br>
+    </div>
+    <% }) %>
+</div>
+<br>
+<br>
+<form action="/user" method="post">
+    <div class="form-group">
+        <label for="delete user">User name</label>
+        <input name="username" type="name" class="form-control" id="input-username" placeholder="User name here ...">
+        <small id="emailHelp" class="form-text text-muted">Enter `username` and delete.</small>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+<%- include('_footer'); -%>
