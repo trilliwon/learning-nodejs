@@ -5,7 +5,7 @@
     "build-my-js": "browserify main.js -o compiled.js"
   },
   "dependencies": {
-    "browserify": "^7.1.0",
+    "browserify": "^16.5.0",
     "random-color": "0.0.1"
   },
   "devDependencies": {
